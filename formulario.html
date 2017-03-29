@@ -24,6 +24,7 @@
 			<label for="nascimento">Nacimento</label>
 			<input type="date" name="nascimento" id="nascimento" class="form-control" required min="2016-01-01" max="2016-01-15">
 		</div>
+		</div>
 		<div class="form-group">
 			<label>Sexo</label>
 			<input type="radio" name="sexo" id="masculino">
@@ -33,7 +34,7 @@
 		</div>
 		<div class="form-group">
 			<label for="li">Li o contrato</label>
-			<input type="checkbox" name="li" id="li" required checked>
+			<input type="checkbox" name="li" id="li" required checked> <!-- requeried checked é para o chebox já vir selecionado -->
 		</div>
 		<div class="form-group">
 			<label for="volume">Volume</label>
@@ -41,7 +42,39 @@
 		</div>
 		<div class="form-group">
 			<label for="meter">Bateria</label>
-			<meter min="0" max="100" value="50">50</meter>
+			<meter min="0" max="100" low="20" value="50">50</meter> <!-- atibuto low especifica qual o valor que a bateria estará baixa -->
+		</div>
+		<div class="form-group">
+			<label for="meter">Carregando</label>
+			<progress min="0" max="100" value="35">35%</progress>
+		</div>
+		<div class="form-group">
+			<label for="ano">Ano Fabricação</label>
+			<input type="number" name="ano" id="ano" min="1995" max="2017" value="1995" class="form-control">
+		</div>
+		<div class="form-group">
+			<label for="cor">Cor</label>
+			<input type="color" name="cor" id="cor" class="form-control">
+		</div>
+		<div class="form-group">
+			<label for="url">URL</label>
+			<input type="url" name="url" id="url" class="form-control">
+		</div>
+		<div class="form-group">
+			<label for="busca">Busca</label>
+			<input type="search" name="busca" id="busca" class="form-control">
+		</div>
+		<div class="form-group">
+			<label for="mensagem">Mensagem</label>
+			<textarea name="mensagem" id="mensagem" cols="50" rows="10"></textarea>
+		</div>
+		<div class="form-group">
+			<label for="estados">Estados</label>
+			<select name="estados" id="estados">
+				<option value="SP">São Paulo</option>
+				<option value="SC" selected>Florianópolis</option> <!-- atributo select já traz a informação defaul preenchida do campo de seleção -->
+				<option value="PR">Ponta Grossa</option>
+			</select>
 		</div>
 		<div>
 			<button type="submit" class="btn btn-primary">Cadastrar</button>
