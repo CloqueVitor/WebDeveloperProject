@@ -14,11 +14,18 @@
 	<form method="POST" action="">
 		<div class="form-group">
 			<label for="nome">Nome</label>
-			<input type="text" name="nome" id="nome" class="form-control" placeholder="Digite seu nome" required>
+			<input type="text" name="nome" id="nome" class="form-control" placeholder="Digite seu nome" required autofocus tabindex="1" disabled> <!-- comando autofocus á deixa em evidencia o campo que você quer que o cliente vea ao acessar a página de formulário -->
+
+			<!-- comando tabindex, funciona para deixar na ordem que queira que o usuario digite os dados, no caso desse formulário, a primeira vez q ele acionar o tabe o mesmo vai pular do nome para o campo e-mail, caso ele acione novamente o tabindex="3" vai direciona-lo para o ano de fabricação (Ex de uso: quando voce quer que o cliente digite somente os campos obrigatórios) -->
+
+			<!-- comando disable é utilizado quando se tem uma validação no campo, ou seja a mesma só habilitará se uma outra informação or preenchida (Ex: botão cadastra so habilita se o campo e-mail e senha pro preenchido) -->
+
 		</div class="form-group">
 		<div class="form-group">
 			<label for="email">E-mail</label>
-			<input type="email" name="email" id="email" class="form-control" placeholder="seu@rmail.com" required>
+			<input type="email" name="email" id="email" class="form-control" placeholder="seu@rmail.com" required tabindex="2" readonly>
+			<!-- comando readonly é utilizado quando voce quer desabilitar um campo, mais o usuario pode copiar a informação que possui dentro do campo (ex: quando se tem o botão "li o contrato", o cliente pode copiar a informação que tem no campo contrato mais não poderá editar as informações do contrato) -->
+
 		</div>
 		<div class="form-group">
 			<label for="nascimento">Nacimento</label>
@@ -50,7 +57,7 @@
 		</div>
 		<div class="form-group">
 			<label for="ano">Ano Fabricação</label>
-			<input type="number" name="ano" id="ano" min="1995" max="2017" value="1995" class="form-control">
+			<input type="number" name="ano" id="ano" min="1995" max="2017" value="1995" class="form-control" tabindex="3">
 		</div>
 		<div class="form-group">
 			<label for="cor">Cor</label>
@@ -76,6 +83,52 @@
 				<option value="PR">Ponta Grossa</option>
 			</select>
 		</div>
+		<div class="form-group">
+			<label for="estados">Estados</label>
+			<select name="estados" id="estados">
+				<optgroup label="Sudeste"> <!-- agrupador por regiões -->
+				<option value="SP">São Paulo</option>
+				<option value="RJ">Rio de Janeiro</option>
+				<option value="MG">Minas Gerais</option>
+				</optgroup>
+				<optgroup label="Sul">
+				<option value="PR">Ponta Grossa</option>
+				<option value="SC">Florianópolis</option>
+				<option value="RS">Rio Grande do Sul</option>
+				</optgroup>
+			</select>
+		</div>
+
+		<input type="hidden" name="id" value="1"> <!-- atributo hidden é utilizado para enviar informações ocultas, sem que o cliente consiga ver a informação no front-end (ex: módulo de pagamento, utilizando API do PayPal) é enviado somente os dados necessários para que o pagamento sea efetuado -->
+
+		<div class="form-group">
+			<label for="senha">Senha</label>
+			<input type="password" name="senha" id="senha" class="form-control">
+		</div>
+		<div class="form-group">
+			<label for="mes">Mês</label>
+			<input type="month" name="mes" id="mes" class="form-control">
+		</div>
+		<div class="form-group">
+			<label for="hora">Hora</label>
+			<input type="time" name="hora" id="hora" class="form-control">
+		</div>
+		<div class="form-group">
+			<label for="semana">Semana</label>
+			<input type="week" name="semana" id="semana" class="form-control">
+		</div>
+
+		<div>
+			<input type="text" list="navegadores">
+			<datalist id="navegadores">
+				<option value="Chrome"></option>
+				<option value="Firefox"></option>
+				<option value="Safari"></option>
+				<option value="Edge"></option>
+			</datalist>
+		</div>
+
+
 		<div>
 			<button type="submit" class="btn btn-primary">Cadastrar</button>
 		</div>
